@@ -6,3 +6,5 @@
 // console.log(`Phrase - phrase: ${phrase.phrase}`);
 
 
+const game = new Game();
+game.getRandomPhrase().addPhraseToDisplay();
