@@ -1,7 +1,6 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
-const ul = document.getElementById("phrase").firstElementChild;
 
 /*This is the Phrase class that includes a constructor that receives a phrase
 parameter and initializes the phrase property.*/

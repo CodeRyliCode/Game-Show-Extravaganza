@@ -21,7 +21,7 @@ class Game {
   };
 
 startGame() {
-const screenOverlay = document.getElementById("overlay");
+// const screenOverlay = document.getElementById("overlay");
 screenOverlay.style.display = "none";
 this.activePhrase = this.getRandomPhrase();
 this.activePhrase.addPhraseToDisplay();
@@ -37,7 +37,7 @@ checkForWin() {
 }
 
 removeLife() {
-const hearts = document.querySelectorAll(".tries img");
+// const hearts = document.querySelectorAll(".tries img");
 hearts[this.missed].src = "images/lostHeart.png";
 this.missed += 1;
 if (this.missed > 4) {
@@ -47,19 +47,20 @@ if (this.missed > 4) {
 }
 
 gameOver() {
-    let overlay = document.getElementById("overlay");
-    overlay.style.display = "";
-
+    // const screenOverlay = document.getElementById("overlay");
+    screenOverlay.style.display = "";
     if (this.checkForWin() === true) {
       document.getElementById("game-over-message").innerHTML =
         "Awesome! Way to Go! You guessed the phrase :)";
       overlay.className = "win";
+      this.resetGame();
       return true;
     } else {
       document.getElementById(
         "game-over-message"
       ).innerHTML = `Sorry that's not the correct phrase. Try again :)`;
       overlay.className = "lose";
+      this.resetGame();
       return false;
     }
 
@@ -71,6 +72,18 @@ handleInteraction() {
 
 }
 
+resetGame() {
+    ul.innerHTML = '';
+    keys.forEach(button => {
+        button.classList.remove('wrong');
+        button.classList.remove('chosen');
+        button.removeAttribute('disabled')
+
+    })
+    hearts.forEach(heart =>{
+      heart.src = 'images/liveHeart.png';
+  })
+}
 }
 
 
